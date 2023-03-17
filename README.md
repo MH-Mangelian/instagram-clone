@@ -1,2 +1,2 @@
 # instagram-clone
-Instagram Clone with React Js and tailwindcss
+Instagram Clone with React Js and tailwind css
