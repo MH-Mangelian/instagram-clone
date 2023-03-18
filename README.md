@@ -1,2 +1,3 @@
-# instagram-clone
-Instagram Clone with React Js and tailwind css
+instagram-clone
+
+Instagram Clone with Next Js,NextAuth ,tailwind css and Recoil
