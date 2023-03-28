@@ -1,5 +1,5 @@
 import { useEffect , useState } from "react";
-import GetApi from "@/pages/api/GetApi";
+import GetApi from "@/pages/api/GetStoryApi";
 
 
 const Stories = ({data}) => {
