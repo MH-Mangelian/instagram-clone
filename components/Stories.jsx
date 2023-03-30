@@ -1,15 +1,12 @@
-import { useEffect , useState } from "react";
 import GetApi from "@/pages/api/GetStoryApi";
 
-
-const Stories = ({data}) => {
+const Stories = () => {
 
 
 
   return (
-    <div className="">
+    <div>
         <GetApi 
-        
         />
     </div>
   )
