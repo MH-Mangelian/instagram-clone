@@ -36,10 +36,12 @@ const Post = ({id,username,userImg,imgUrl,caption}) => {
         </div>
         
         {/* -----------comments---------- */}
-        <form>
-          <GrEmoji className="h-6 w-6 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"/>
-          <input type="text" />
-          <button>Post</button>
+        <form className="flex items-center p-4">
+          <GrEmoji className="h-6 w-6 mr-1 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"/>
+          <input type="text" 
+          placeholder="Add a comment."
+          className="border-none flex-1 focus:right-0 outline-none focus:ring-0"/>
+          <button className="font-semibold text-blue-400">Post</button>
         </form>
 
         {/* -----------InputBox---------- */}
