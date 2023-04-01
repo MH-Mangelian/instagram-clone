@@ -1,6 +1,8 @@
 import React from 'react'
 import Stories from './Stories'
 import Posts from './Posts'
+import RightMiniProfile from './RightMiniProfile'
+import SuggestionProfile from './SuggestionProfile'
 
 
 
@@ -20,9 +22,12 @@ const feed = () => {
         {/* ------------ Section one End------------------ */}
 
         {/* ------------ Section two------------------ */}
-        <section>
+        <section className='hidden xl:inline-grid md:col-span-1'>
             {/* -----------------Mini Profile---------------------- */}
-
+            <div className='fixed top-20'>
+              <RightMiniProfile/>
+              <SuggestionProfile/>
+            </div>
             {/* -----------------Suggest Lions---------------------- */}
 
         </section>
