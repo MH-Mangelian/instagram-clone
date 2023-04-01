@@ -1,45 +1,43 @@
-
 const SuggestionProfile = () => {
-
   const FactitiousDataSuggestion = [
     {
       id: "101",
       username: "Elias Carlsson",
       userImg: "https://picsum.photos/id/200/1920/1280",
-      bio:"i'm a farmer from Dallas"
+      bio: "i'm a farmer from Dallas",
     },
     {
       id: "102",
       username: "Ali Garner",
       userImg: "https://picsum.photos/id/201/5000/3333",
-      bio:"i'm a full stack developer from Tehran"
+      bio: "i'm a full stack developer from Tehran",
     },
     {
       id: "103",
       username: "Diogo Tavares",
       userImg: "https://picsum.photos/id/203/4032/3024",
-      bio:"i'am a globetrotter from madrid , i love music and nature"
+      bio: "i'am a globetrotter from madrid , i love music and nature",
     },
     {
       id: "104",
       username: "Tiago Gerken",
       userImg: "https://picsum.photos/id/204/5000/3333",
-      bio:"i'am an engine driver from Buenos Aires"
+      bio: "i'am an engine driver from Buenos Aires",
     },
     {
       id: "105",
       username: "Philipp Reiner",
       userImg: "https://picsum.photos/id/206/2880/1800",
-      bio:"i'm a farmer and have a big glasshouse , i from wellington"
+      bio: "i'm a farmer and have a big glasshouse , i from wellington",
     },
   ];
 
   return (
-    <div className="mt-4 ml-10">
-        <div className="flex justify-between text-sm mb-5">
-            <h3 className="text-sm font-bold text-gray-400">Suggestions for you</h3>
-            <button className="text-gray-600 font-semibold">See All</button>
-        </div>
+    <div className="mt-4 ml-12 mx-auto">
+      <div className="flex justify-between text-sm mb-5">
+        <h3 className="text-sm font-bold text-gray-400">Suggestions for you</h3>
+        <button className="text-gray-600 font-semibold">See All</button>
+      </div>
       {FactitiousDataSuggestion.map((data) => (
         <div key={data.id} className="flex items-center justify-between">
           <img
@@ -53,9 +51,11 @@ const SuggestionProfile = () => {
             <h3 className="text-sm truncate text-gray-400">{data.bio}</h3>
           </div>
 
-          <button className="text-blue-400 text-sm font-semibold">
-            Follow
-          </button>
+          <div className="flex">
+            <button className=" text-blue-400 text-sm font-semibold">
+              Follow
+            </button>
+          </div>
         </div>
       ))}
     </div>
