@@ -10,6 +10,25 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+
+  pages: {
+    signIn: "/auth/signin",
+  },
+
+  //-------------customize username and userId ------------------
+  callbacks: {
+    async session({session , user , token}) {
+      session.user.username = session.user.name
+        .split(" ")
+        .join("_")
+        .toLocaleLowerCase();
+
+      session.user.userId = token.sub 
+      return session;
+    },
+  }
+
+
 }
 
 export default NextAuth(authOptions)
