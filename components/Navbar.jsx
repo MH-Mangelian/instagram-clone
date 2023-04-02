@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 // --------------------------Import Icons----------------------------
 import { IoIosSearch } from "react-icons/io";
@@ -9,6 +10,10 @@ import { HiOutlinePaperAirplane, HiUserGroup } from "react-icons/hi";
 import { FiPlusCircle } from "react-icons/fi";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
+  console.log(session);
+
   return (
     <div className="shadow-sm border-b bg-white">
       <div className="flex justify-between">
@@ -50,22 +55,29 @@ const Navbar = () => {
           <TiHome className="navBtn" />
           <AiOutlineMenu className="h-6 md:hidden cursor-pointer" />
 
-          <div className="relative navBtn">
-            <HiOutlinePaperAirplane className="navBtn rotate-45" />
-            <div className="absolute text-xs text-white -top-1 -right-2 h-[17px] w-[17px] bg-red-600 rounded-full flex items-center justify-center animate-pulse">
-              3
-            </div>
-          </div>
+          {session ? (
+            <>
+              <div className="relative navBtn">
+                <HiOutlinePaperAirplane className="navBtn rotate-45" />
+                <div className="absolute text-xs text-white -top-1 -right-2 h-[17px] w-[17px] bg-red-600 rounded-full flex items-center justify-center animate-pulse">
+                  3
+                </div>
+              </div>
 
-          <FiPlusCircle className="navBtn" />
-          <HiUserGroup className="navBtn" />
-          <AiOutlineHeart className="navBtn" />
+              <FiPlusCircle className="navBtn" />
+              <HiUserGroup className="navBtn" />
+              <AiOutlineHeart className="navBtn" />
 
-          <img
-            src="/user-profile-icon.svg"
-            alt="instagram"
-            className="h-10 rounded-full cursor-pointer"
-          />
+              <img
+                onClick={signOut}
+                src={session?.user?.image}
+                alt="instagram"
+                className="h-10 w-10 rounded-full cursor-pointer"
+              />
+            </>
+          ) : (
+            <button onClick={signIn}>Sign In</button>
+          )}
         </div>
       </div>
     </div>
