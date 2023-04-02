@@ -12,7 +12,7 @@ import { FiPlusCircle } from "react-icons/fi";
 const Navbar = () => {
   const { data: session } = useSession();
 
-  console.log(session);
+  //console.log(session);
 
   return (
     <div className="shadow-sm border-b bg-white">
@@ -22,6 +22,7 @@ const Navbar = () => {
           <div className="relative hidden lg:inline-grid w-24 h-10 pl-10 cursor-pointer">
             <Image
               src="/instagram-text-logo.svg"
+              className="ml-4"
               alt="instagram"
               layout="fill"
               objectFit="contain"
@@ -76,7 +77,7 @@ const Navbar = () => {
               />
             </>
           ) : (
-            <button onClick={signIn}>Sign In</button>
+            <button className="pr-4" onClick={signIn}>Sign In</button>
           )}
         </div>
       </div>
